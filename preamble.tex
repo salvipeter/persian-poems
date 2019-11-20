@@ -1,0 +1,43 @@
+\documentclass{book}
+
+\usepackage[b6paper]{geometry}
+
+% Page numbers
+\usepackage{pgfornament}
+\usepackage{fancyhdr}
+\fancyhf{}
+\cfoot{\pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}}
+\pagestyle{fancy}
+
+%% Encodings
+\usepackage{polyglossia}
+\setmainlanguage{hungarian}
+\usepackage{xepersian}
+
+%% Fonts
+\setmainfont{fbb}
+\newfontfamily\poemfont{IranNastaliq:style=Regular}
+%% \newfontfamily\poemfont{Hussaini Nastaleeq}
+\newfontfamily\persianfont[Script=Arabic]{Amiri}
+
+%% Verse environment
+\usepackage{varwidth}
+\newenvironment{Verse}
+  {\center\varwidth{\linewidth}}
+  {\endvarwidth\endcenter} 
+
+%% poem command
+\newcommand{\poem}[6] {
+\begin{center}#1\\{\RTL\persianfont #2}\end{center}
+\vspace{1cm}
+{\RTL\large\poemfont\begin{tabular}{r r}#3\end{tabular}}
+\vspace{1cm}
+\begin{Verse}\itshape #4\end{Verse}
+\vspace{0.5cm}
+\begin{Verse} #5\end{Verse}
+\vspace{0.5cm}
+{\small #6}
+\newpage
+}
+
+\begin{document}
