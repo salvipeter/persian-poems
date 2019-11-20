@@ -17,7 +17,6 @@
 %% Fonts
 \setmainfont{fbb}
 \newfontfamily\poemfont{IranNastaliq:style=Regular}
-%% \newfontfamily\poemfont{Hussaini Nastaleeq}
 \newfontfamily\persianfont[Script=Arabic]{Amiri}
 
 %% Verse environment
@@ -28,7 +27,7 @@
 
 %% poem command
 \newcommand{\poem}[6] {
-\begin{center}#1\\{\RTL\persianfont #2}\end{center}
+\begin{center}#1\smallskip{\RTL\persianfont #2}\end{center}
 \vspace{1cm}
 {\RTL\large\poemfont\begin{tabular}{r r}#3\end{tabular}}
 \vspace{1cm}
