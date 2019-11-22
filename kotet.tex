@@ -1,13 +1,40 @@
-%% Kell:
-%% - cimlap
-%% - kolofon [benne: eredeti konyvek, fordito, evszam; TeTeX, FBB/IranNastaliq]
-%% - ajanlas
-%% - tartalomjegyzek
-%% - eloszo
-%% - kiejtes
-%% - verseles [+ az ebbol adodo plusz jelolesek: macron/breve, vissza-aposztrof]
-%% - versek [lapszamok innentol arab szamokkal, elotte romai]
+\input{preamble.tex}
 
-\input{preamble}
+\frontmatter
+\pagenumbering{roman}
+
+%% \title{Perzsa négysoros versek}
+%% \date{}
+%% \maketitle
+\begin{titlepage}
+\centering
+\includegraphics[width=6cm]{hafez.png}\\
+\vspace{\fill}
+{\LARGE Perzsa négysoros versek}
+\end{titlepage}
+
+\input{kolofon}
+
+\input{ajanlas}
+
+\tableofcontents
+
+\chapter*{Előszó}
+\addcontentsline{toc}{chapter}{Előszó}
+\input{eloszo}
+
+\chapter*{Kiejtés}
+\addcontentsline{toc}{chapter}{Kiejtés}
+\input{kiejtes}
+
+\chapter*{A \emph{robâi} versforma}
+\addcontentsline{toc}{chapter}{A \emph{robâi} versforma}
+\input{versforma}
+
+\mainmatter
+\pagenumbering{arabic}
+\part*{Versek}
+\addcontentsline{toc}{chapter}{Versek}
 \input{poems}
+
 \input{epilogue}

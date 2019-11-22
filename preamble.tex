@@ -1,13 +1,28 @@
 \documentclass{book}
 
 \usepackage[b6paper]{geometry}
+\usepackage{graphicx}
 
 % Page numbers
 \usepackage{pgfornament}
 \usepackage{fancyhdr}
 \fancyhf{}
-\cfoot{\pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}}
+\fancyfoot[C]{
+  \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
+}
 \pagestyle{fancy}
+%\fancypagestyle{plain}{}
+%\fancypagestyle{empty}{}
+
+%% Chapters should use empty style instead of plain style
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
+%% Titles
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\chapfnt\bfseries}{}{0pt}{\chapfnt}
 
 %% Encodings
 \usepackage{polyglossia}
@@ -26,7 +41,7 @@
   {\endvarwidth\endcenter} 
 
 %% poem command
-\newcommand{\poem}[6] {
+\newcommand{\poemnotoc}[6] {
 \begin{center}#1\smallskip{\RTL\persianfont #2}\end{center}
 \vspace{1cm}
 {\RTL\large\poemfont\begin{tabular}{r r}#3\end{tabular}}
@@ -36,7 +51,12 @@
 \begin{Verse} #5\end{Verse}
 \vspace{0.5cm}
 {\small #6}
-\newpage
+\clearpage
+}
+
+\newcommand{\poem}[6] {
+\addcontentsline{toc}{section}{#1}
+\poemnotoc{#1}{#2}{#3}{#4}{#5}{#6}
 }
 
 \begin{document}
