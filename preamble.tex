@@ -24,6 +24,13 @@
 \titleformat{\chapter}[display]
   {\normalfont\chapfnt\bfseries}{}{0pt}{\chapfnt}
 
+%% Tables
+\usepackage{caption}
+\captionsetup[table]{labelformat=empty}
+\usepackage{float}
+\floatstyle{boxed}
+\restylefloat{table}
+
 %% Encodings
 \usepackage{polyglossia}
 \setmainlanguage{hungarian}
