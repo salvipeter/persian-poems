@@ -6,3 +6,4 @@ SOURCES=kolofon.tex ajanlas.tex preamble.tex \
 
 kotet.pdf: kotet.tex $(SOURCES)
 	xelatex $<
+	xelatex $<
