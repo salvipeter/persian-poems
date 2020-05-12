@@ -3,9 +3,7 @@
 \frontmatter
 \pagenumbering{roman}
 
-%% \title{Perzsa négysoros versek}
-%% \date{}
-%% \maketitle
+%% Cover page
 \begin{titlepage}
 \centering
 \includegraphics[width=6cm]{hafez.png}\\
@@ -13,9 +11,29 @@
 {\LARGE Perzsa négysoros versek}
 \end{titlepage}
 
+%% Inside cover
+\thispagestyle{empty}
+\newpage
+
+%% Title page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+{\Large Perzsa négysoros versek}\\
+\vspace{7cm}
+{\large Szerkesztette és fordította:}\\
+\vspace{1em}
+{\large Salvi Péter}\\
+\vspace{1em}
+2020
+\end{titlepage}
+
 \input{kolofon}
 
 \input{ajanlas}
+
+\thispagestyle{empty}
+\newpage
 
 \chapter*{Előszó}
 \addcontentsline{toc}{chapter}{Előszó}
@@ -29,10 +47,22 @@
 \addcontentsline{toc}{chapter}{A \emph{robâi} versforma}
 \input{versforma}
 
+%% Remove fancy style for the "Versek" title page
+\fancypagestyle{plain}{\fancyhf{}}
+
 \mainmatter
 \pagenumbering{arabic}
 \addcontentsline{toc}{chapter}{Versek}
 \part*{Versek}
+
+%% Restore fancy style
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{
+    \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
+  }
+}
+
 \input{poems}
 
 \tableofcontents

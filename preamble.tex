@@ -13,13 +13,12 @@
   \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
 }
 \pagestyle{fancy}
-%\fancypagestyle{plain}{}
-%\fancypagestyle{empty}{}
-
-%% Chapters should use empty style instead of plain style
-\makeatletter
-\let\ps@plain\ps@empty
-\makeatother
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{
+    \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
+  }
+}
 
 %% Titles
 \usepackage{titlesec}
