@@ -6,9 +6,21 @@
 %% Cover page
 \begin{titlepage}
 \centering
-\includegraphics[width=6cm]{hafez.png}\\
+\includegraphics[width=5.8cm]{hafez.png}\\
 \vspace{\fill}
-{\LARGE Perzsa négysoros versek}
+\Large PERZSA\\NÉGYSOROS VERSEK
+\end{titlepage}
+
+%% Inside cover
+\thispagestyle{empty}
+\newpage
+
+%% Flyleaf
+\begin{titlepage}
+\thispagestyle{plain}
+\centering
+\vspace*{2cm}
+{\large PERZSA NÉGYSOROS VERSEK}
 \end{titlepage}
 
 %% Inside cover
@@ -17,11 +29,12 @@
 
 %% Title page
 \begin{titlepage}
+\thispagestyle{plain}
 \centering
 \vspace*{2cm}
-{\Large Perzsa négysoros versek}\\
+{\Large PERZSA NÉGYSOROS VERSEK}\\
 \vspace{7cm}
-{\large Szerkesztette és fordította:}\\
+{\large Válogatta, fordította és szerkesztette}\\
 \vspace{1em}
 {\large Salvi Péter}\\
 \vspace{1em}
@@ -31,6 +44,14 @@
 \input{kolofon}
 
 \input{ajanlas}
+
+%% Fancy style
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{
+    \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
+  }
+}
 
 \thispagestyle{empty}
 \newpage
