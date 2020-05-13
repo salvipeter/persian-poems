@@ -48,19 +48,25 @@
 
 %% Absolute positioning
 \usepackage[absolute]{textpos}
+\usepackage{calc}
 
 %% poem command
 \newcommand{\poemnotoc}[6] {
 \begin{center}#1\smallskip{\RTL\persianfont #2}\end{center}
-\begin{textblock}{16}(0,3.5)
+\ifodd\thepage
+  \textblockorigin{1in+\hoffset+\oddsidemargin}{0cm}
+\else
+  \textblockorigin{1in+\evensidemargin}{0cm}
+\fi
+\begin{textblock*}{\textwidth}(0cm,4cm)
   \begin{center}{\RTL\large\poemfont\begin{tabular}{r r}#3\end{tabular}}\end{center}
-\end{textblock}
-\begin{textblock}{16}(0,5.75)
+\end{textblock*}
+\begin{textblock*}{\textwidth}(0cm,6.5cm)
   \begin{Verse}\itshape #4\end{Verse}
-\end{textblock}
-\begin{textblock}{16}(0,8)
+\end{textblock*}
+\begin{textblock*}{\textwidth}(0cm,9cm)
   \begin{Verse} #5\end{Verse}
-\end{textblock}
+\end{textblock*}
 \vfill
 {\small #6}
 \clearpage
