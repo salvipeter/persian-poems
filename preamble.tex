@@ -1,6 +1,5 @@
 \documentclass{book}
-
-\usepackage[b6paper]{geometry}
+\usepackage[xetex,b6paper,twoside]{geometry}
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{framed}
@@ -10,7 +9,7 @@
 \usepackage{fancyhdr}
 \fancyhf{}
 \fancyfoot[C]{
-  \pgfornament[anchor=south,width=5mm]{11}\ \thepage\ \pgfornament[anchor=south,width=5mm]{14}
+  \pgfornament[anchor=south,width=5mm]{11}\thepage\ \pgfornament[anchor=south,width=5mm]{14}
 }
 \pagestyle{fancy}
 \fancypagestyle{plain}{\fancyhf{}}
@@ -33,7 +32,7 @@
 %% Encodings
 \usepackage{polyglossia}
 \setmainlanguage{hungarian}
-\usepackage{xepersian}
+\usepackage{xepersian}\LTR
 
 %% Fonts
 \setmainfont{fbb}
